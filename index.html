@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Navix - Smart Bus Booking</title>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+        background: linear-gradient(135deg, #1e3c72, #2a5298);
+        min-height: 100vh;
+        color: #fff;
+    }
+
+    header {
+        text-align: center;
+        padding: 20px;
+        font-size: 28px;
+        font-weight: bold;
+        letter-spacing: 1px;
+        background: rgba(0,0,0,0.4);
+        backdrop-filter: blur(10px);
+    }
+
+    header span {
+        color: #00f2fe;
+    }
+
+    .container {
+        max-width: 900px;
+        margin: 50px auto;
+        background: rgba(255,255,255,0.1);
+        backdrop-filter: blur(15px);
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .intro {
+        text-align: center;
+        margin-bottom: 25px;
+        color: #ddd;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    label {
+        font-weight: 500;
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    input, select {
+        width: 100%;
+        padding: 12px;
+        border-radius: 8px;
+        border: none;
+        outline: none;
+        font-size: 14px;
+    }
+
+    button {
+        width: 100%;
+        padding: 14px;
+        border: none;
+        border-radius: 8px;
+        background: linear-gradient(to right, #00f2fe, #4facfe);
+        color: #000;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    button:hover {
+        transform: scale(1.03);
+        opacity: 0.9;
+    }
+
+    .tip {
+        text-align: center;
+        margin-top: 10px;
+        font-size: 13px;
+        color: #ccc;
+    }
+
+    .features {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 30px;
+        gap: 10px;
+    }
+
+    .feature-box {
+        flex: 1;
+        background: rgba(255,255,255,0.15);
+        padding: 15px;
+        border-radius: 10px;
+        text-align: center;
+        transition: 0.3s;
+    }
+
+    .feature-box:hover {
+        transform: translateY(-5px);
+        background: rgba(255,255,255,0.25);
+    }
+
+    footer {
+        text-align: center;
+        margin-top: 30px;
+        padding: 15px;
+        font-size: 14px;
+        color: #ccc;
+    }
+</style>
+</head>
+
+<body>
+
+<header>
+    🚌 <span>Navix</span> - Smart Bus Booking Assistant
+</header>
+
+<div class="container">
+    <h2>Book Your Bus Ticket</h2>
+    <p class="intro">
+        Meet <b>Navix</b> 🤖 — your intelligent assistant for quick, smooth, and smart ticket booking.
+    </p>
+
+    <div class="form-group">
+        <label>From</label>
+        <input type="text" placeholder="Enter departure city">
+    </div>
+
+    <div class="form-group">
+        <label>To</label>
+        <input type="text" placeholder="Enter destination city">
+    </div>
+
+    <div class="form-group">
+        <label>Date of Journey</label>
+        <input type="date">
+    </div>
+
+    <div class="form-group">
+        <label>Bus Type</label>
+        <select>
+            <option>AC</option>
+            <option>Non-AC</option>
+            <option>Sleeper</option>
+        </select>
+    </div>
+
+    <button>Search Buses</button>
+
+    <p class="tip">💡 Tip: Use Navix chat (bottom-right) for instant help</p>
+
+    <div class="features">
+        <div class="feature-box">
+            ⚡ Fast Booking<br><small>Instant reservations</small>
+        </div>
+        <div class="feature-box">
+            💰 Best Prices<br><small>Affordable fares</small>
+        </div>
+        <div class="feature-box">
+            🤖 Navix AI<br><small>Smart assistance 24/7</small>
+        </div>
+    </div>
+</div>
+
+<footer>
+    © 2026 Navix | Powered by IBM Watson Assistant
+</footer>
+
+<!-- Watson Assistant Chat Integration -->
+<script>
+  window.watsonAssistantChatOptions = {
+    integrationID: "6a6052d6-e732-4f66-9a7e-fbd5478ea917",
+    region: "eu-de",
+    serviceInstanceID: "07759be1-4cde-4477-8582-0f1ddeaba834",
+    onLoad: async (instance) => { await instance.render(); }
+  };
+  setTimeout(function(){
+    const t=document.createElement('script');
+    t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + 
+    (window.watsonAssistantChatOptions.clientVersion || 'latest') + 
+    "/WatsonAssistantChatEntry.js";
+    document.head.appendChild(t);
+  });
+</script>
+
+</body>
+</html>
